@@ -73,7 +73,7 @@ for t in b:
     # print(t[0], t[1], t[2].body)
     for r in res.body:
         # noinspection PyProtectedMember
-        if hasattr(r, '_name') and r._name == t[1]:
+        if hasattr(r, '_name') and r._name == t[1] and hasattr(r, 'body') and hasattr(r.body, 'body'):
             if t[0] == "@begin":
                 r.body.body = [t[2]] + r.body.body
             elif t[0] == "@end":
