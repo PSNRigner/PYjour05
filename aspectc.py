@@ -56,7 +56,7 @@ def add_asp(self, *args):
                 root = body
                 body = body.body
                 for bod in body:
-                    if hasattr(bod, '_name') and bod._name == name:
+                    if hasattr(bod, '_name') and bod._name == name and hasattr(bod, 'body'):
                         ctype = PrimaryType(bod.ctype._identifier)
                         ctype._storage = 2
                         ctype._decltype = PointerType()
