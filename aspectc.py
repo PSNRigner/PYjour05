@@ -91,7 +91,7 @@ def recur_body(rec, v):
             if i == 0:
                 rec.body = [v] + rec.body
             else:
-                rec.body = rec.body[:len(rec) - 1] + [v] + rec.body[i:]
+                rec.body.insert(i, v)
             i += 1
             ok = True
         i += 1
@@ -102,7 +102,7 @@ aspectC = AspectC()
 if len(sys.argv) > 1:
     res = aspectC.parse_file(sys.argv[1])
 else:
-    res = aspectC.parse_file("test2.c")
+    res = aspectC.parse_file("test3.c")
 
 for t in b:
     for r in res.body:
